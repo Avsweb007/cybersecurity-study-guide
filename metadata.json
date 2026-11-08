@@ -1,0 +1,6 @@
+{
+  "name": "NetSec Matrix - Security & Protocol Reference Hub",
+  "description": "High-speed security engineering reference, network port lookup, HTTP status code triage, audit commands, and interactive study flashcards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
