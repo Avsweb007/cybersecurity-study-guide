@@ -29,8 +29,8 @@ export const INITIAL_REFERENCE_ITEMS: ReferenceItem[] = [
     id: "http-403",
     category: "HTTP Status",
     code: "403 Forbidden",
-    meaning: "Access denied by server policy or ACL.",
-    security_note: "Indicates authentication succeeded, but authorization failed.",
+    meaning: "Access denied: server understood the request but refused to allow it.",
+    security_note: "403 Forbidden means the server understood the request but refused to allow it. This can happen whether or not you’re logged in.",
     protocol_family: "HTTP/1.1 & HTTP/2",
     risk_level: "Informational",
     attack_vectors: [
@@ -915,7 +915,7 @@ export const PRESET_COMPARISONS: ComparisonPair[] = [
     itemAId: "http-401",
     itemBId: "http-403",
     keyDifference: "Authentication (Who are you?) vs. Authorization (Are you permitted?)",
-    analystSummary: "401 means the client provided no credentials or invalid credentials (identity unconfirmed; must return WWW-Authenticate). 403 means the identity IS established and understood, but server policies or ACLs strictly forbid the action. Re-authenticating with the same user will not solve a 403."
+    analystSummary: "401 Unauthorized means credentials are missing or invalid (identity unverified). 403 Forbidden means the server understood the request but refused to allow it. This can happen whether or not you’re logged in."
   },
   {
     id: "comp-22-vs-23",

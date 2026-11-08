@@ -172,37 +172,37 @@ export default function App() {
         {/* Primary View: Catalog (Cards or Table) */}
         {(currentView === 'cards' || currentView === 'table') && (
           <div>
-            {/* Editorial Hero Header */}
-            <div className="mb-8">
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
+            {/* Hero Header (Compact on mobile so Search & Cards are near top) */}
+            <div className="mb-4 sm:mb-8">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-4 pb-3 sm:pb-6 border-b border-slate-200 dark:border-slate-800">
                 <div>
-                  <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                    Network & Protocol Security Matrix
+                  <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                    Protocol & Port Security Matrix
                   </h1>
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
+                  <p className="hidden sm:block text-sm text-slate-600 dark:text-slate-400 mt-1 max-w-2xl leading-relaxed">
                     Fast-lookup engineering reference for network ports, HTTP status codes, security
                     notes, verification commands, and firewall hardening rules.
                   </p>
                 </div>
 
                 {/* Quick Stats Strip */}
-                <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400 shrink-0">
+                <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 shrink-0">
                   <div>
-                    <span className="font-mono tabular-nums font-bold text-slate-900 dark:text-white text-base">
+                    <span className="font-mono tabular-nums font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                       {items.filter((i) => i.category === 'Ports').length}
                     </span>
                     <span className="ml-1 text-slate-500">Ports</span>
                   </div>
                   <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">|</span>
                   <div>
-                    <span className="font-mono tabular-nums font-bold text-slate-900 dark:text-white text-base">
+                    <span className="font-mono tabular-nums font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                       {items.filter((i) => i.category === 'HTTP Status').length}
                     </span>
-                    <span className="ml-1 text-slate-500">HTTP Codes</span>
+                    <span className="ml-1 text-slate-500">HTTP</span>
                   </div>
                   <span aria-hidden="true" className="text-slate-300 dark:text-slate-700">|</span>
                   <div>
-                    <span className="font-mono tabular-nums font-bold text-cyan-600 dark:text-cyan-400 text-base">
+                    <span className="font-mono tabular-nums font-bold text-cyan-600 dark:text-cyan-400 text-sm sm:text-base">
                       {bookmarks.length}
                     </span>
                     <span className="ml-1 text-slate-500">Saved</span>
@@ -417,26 +417,33 @@ export default function App() {
             <span>Security Engineering & Protocol Reference Guide</span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs">
+          <div className="flex items-center gap-3 sm:gap-4 text-xs flex-wrap">
             <button
               onClick={() => setIsJsonModalOpen(true)}
               className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
             >
-              Export JSON Dataset
+              Export JSON
             </button>
             <span aria-hidden="true">·</span>
             <button
               onClick={() => setCurrentView('flashcards')}
               className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
             >
-              Study Flashcards
+              Flashcards & Quiz
             </button>
             <span aria-hidden="true">·</span>
             <button
               onClick={() => setCurrentView('triage')}
               className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
             >
-              Triage Calculator
+              Triage
+            </button>
+            <span aria-hidden="true">·</span>
+            <button
+              onClick={() => setCurrentView('compare')}
+              className="hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
+            >
+              Compare
             </button>
           </div>
         </div>

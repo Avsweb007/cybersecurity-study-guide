@@ -29,7 +29,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ items, onSelectDetail 
       {/* Intro Header */}
       <div className="text-center mb-8">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Side-by-Side Protocol & Code Diff Matrix
+          Compare Protocols & Codes Side-by-Side
         </h2>
         <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-xl mx-auto">
           Compare commonly confused ports, HTTP statuses, and system signals to understand critical
